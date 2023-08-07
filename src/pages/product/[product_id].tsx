@@ -1,18 +1,16 @@
-import Image from 'next/image'
-import { styled } from '../../styles'
 import {
   ImageContainer,
   Img,
   ProductContainer,
   ProductDetails,
+  Container,
 } from '@/src/styles/pages/product'
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { ArrowLeft } from '@phosphor-icons/react'
-import { useEffect, useState } from 'react'
 import Head from 'next/head'
 
-import Link from 'next/link'
 import api from '../../service/api'
+import Link from 'next/link'
 interface ProductProps {
   product: {
     product_id: string
@@ -24,24 +22,26 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
-  const [products, setProducts] = useState([])
-  const [dataProducts, setDataProducts] = useState([])
-
   return (
     <>
-      <Head>
-        <title>{product.product_name}</title>
-      </Head>
-      <ProductContainer>
-        <ImageContainer>
-          <Img src={product.img_link} alt="" />
-        </ImageContainer>
-        <ProductDetails>
-          <h1>{product.product_name}</h1>
-          <span>{product.actual_price}</span>
-          <p>{product.about_product}</p>
-        </ProductDetails>
-      </ProductContainer>
+      <Container>
+        <Link href="/list2">
+          <ArrowLeft color="white" size={40} />
+        </Link>
+        <Head>
+          <title>{product.product_name}</title>
+        </Head>
+        <ProductContainer>
+          <ImageContainer>
+            <Img src={product.img_link} alt="" />
+          </ImageContainer>
+          <ProductDetails>
+            <h1>{product.product_name}</h1>
+            <span>{product.actual_price}</span>
+            <p>{product.about_product}</p>
+          </ProductDetails>
+        </ProductContainer>
+      </Container>
     </>
   )
 }

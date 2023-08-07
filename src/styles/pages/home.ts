@@ -1,64 +1,96 @@
-import { styled } from '..'
+import { styled } from '@stitches/react'
 
-export const HomeContainer = styled('main', {
+export const Container = styled('div', {
   display: 'flex',
+  flexWrap: 'wrap',
+  padding: '10px',
+  alignItems: 'center',
+  justifyContent: 'center',
 
+  h1: {
+    color: 'Black',
+    marginBottom: 20,
+    fontSize: 42,
+  },
+})
+
+export const LinkContainer = styled('div', {
+  justifyContent: 'flex-start',
+  display: 'flex',
   width: '100%',
-  maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
-  marginLeft: 'auto',
-  minHeight: 656,
+  padding: '5px',
+})
+
+export const Product = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
 })
 
 export const Img = styled('img', {
   objectFit: 'contain',
   objectPosition: 'center',
-  padding: '5%',
-  height: '55%',
+  height: 55,
+  paddingInline: 30,
 })
 
-export const Product = styled('div', {
-  backgroundColor: '#fff',
-  borderRadius: 8,
-  cursor: 'pointer',
-  position: 'relative',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
+export const ItemContainer = styled('div', {
+  backgroundColor: '#f7f7f7',
+  borderRadius: '8px',
+  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+  margin: '10px',
+
+  maxWidth: 1300,
+
+  height: 50,
   overflow: 'hidden',
-  img: {
-    objectFit: 'cover',
-  },
-
-  footer: {
-    position: 'absolute',
-    bottom: '0.25rem',
-    left: '0.25rem',
-    right: '0.25rem',
-    padding: '2rem',
-    borderRadius: 6,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: 'rgba(0,0,0,0.6)',
-    transform: 'translateY(110%)',
-    opacity: 0,
-    transition: 'all 0.2s ease-in-out',
-
-    strong: {
-      fontSize: '$lg',
-      color: '$gray100',
-    },
-    span: {
-      fontSize: '$xl',
-      fontWeight: 'bold',
-      color: '$green300',
-    },
-  },
+  cursor: 'pointer',
+  transition: 'transform 0.3s, box-shadow 0.3s',
 
   '&:hover': {
-    footer: {
-      transform: 'translateY(0%)',
-      opacity: 1,
-    },
+    transform: 'scale(1.03)',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
   },
+})
+
+export const ProductImage = styled('div', {
+  position: 'relative',
+  paddingBottom: '56.25%',
+  paddingInline: 40,
+})
+
+export const ProductName = styled('span', {
+  fontSize: '16px',
+  fontWeight: 'bold',
+  color: '#333',
+  maxLines: 1,
+  paddingBlock: '1%',
+  paddingInline: 30,
+  whiteSpace: 'nowrap',
+  textOverflow: 'ellipsis',
+  overflow: 'hidden',
+})
+
+export const ProductPrice = styled('span', {
+  fontSize: '16px',
+  fontWeight: 'bold',
+  color: '#333',
+  paddingBlock: '1%',
+  maxLines: 1,
+  textAlign: 'center',
+  justifyContent: 'center',
+  paddingInline: 30,
+  whiteSpace: 'nowrap',
+  textOverflow: 'ellipsis',
+})
+
+export const ProductDescription = styled('span', {
+  fontSize: '16px',
+  fontWeight: 'bold',
+  color: '#333',
+  paddingBlock: '1%',
+  paddingInline: 30,
+  whiteSpace: 'nowrap',
+  textOverflow: 'ellipsis',
+  overflow: 'hidden',
+  maxWidth: '35%',
 })

@@ -1,4 +1,29 @@
-import { styled } from '@stitches/react'
+import { styled } from '..'
+
+export const Container = styled('div', {
+  backgroundColor: '#121214',
+  width: '100%',
+  maxHeight: '100%',
+  padding: '30px',
+  alignItems: 'center',
+  justifyContent: 'center',
+})
+
+export const HomeContainer = styled('main', {
+  display: 'flex',
+  backgroundColor: '$gray900',
+  width: '100%',
+  maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
+  marginLeft: 'auto',
+  minHeight: 656,
+  maxHeight: '100%',
+})
+
+export const ContainerLink = styled('div', {
+  display: 'flex',
+  justifyContent: 'space-between',
+  padding: '5px',
+})
 
 export const Img = styled('img', {
   objectFit: 'contain',
@@ -7,24 +32,17 @@ export const Img = styled('img', {
   height: '55%',
 })
 
-export const ItemContainer = styled('main', {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-})
-
 export const Product = styled('div', {
-  background: 'linear-gradient(100deg, #1ea483 0%, #7465d4 100%)',
+  backgroundColor: '#fff',
   borderRadius: 8,
   cursor: 'pointer',
   position: 'relative',
-  margin: 40,
+  display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   overflow: 'hidden',
   img: {
     objectFit: 'cover',
-    padding: '0.55rem',
   },
 
   footer: {

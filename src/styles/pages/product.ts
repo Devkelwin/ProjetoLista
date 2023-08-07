@@ -1,5 +1,11 @@
 import { styled } from '..'
 
+export const Container = styled('main', {
+  backgroundColor: '#121214',
+  width: '100%',
+  padding: '20px',
+})
+
 export const ProductContainer = styled('main', {
   display: 'grid',
   gridTemplateColumns: '1fr 1fr',
